@@ -33,17 +33,16 @@ import java.util.List;
 public class Main_78_Subsets {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-//        for(int i = 0 ; i <nums.length;i++){
-            ArrayList<Integer> sets = new ArrayList<>();
-////            for(int j = 0 ; j<nums.length;j++){
-////                if(((i>>j)&1)==1){
-////                    sets.add(nums[j]);
-////                }
-////            }
-////            result.add(sets);
-//            Main_78_Subsets.preOrder(nums,i,sets,result);
-//        }
-        Main_78_Subsets.preOrder(nums,0,sets,result);
+        for(int i = 0 ; i <1<<nums.length;i++){
+            List<Integer> sets = new ArrayList<>();
+            for(int j = 0 ; j<nums.length;j++){
+                if(((i>>j)&1)==1){
+                    sets.add(nums[j]);
+                }
+            }
+            result.add(sets);
+        }
+//        Main_78_Subsets.preOrder(nums,0,sets,result);
         return result;
     }
 
